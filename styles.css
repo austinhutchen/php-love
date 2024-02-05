@@ -1,0 +1,65 @@
+/* styles.css */
+
+body {
+    font-size: 1.6vw;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(45deg, #ff80b3, #ff1493);
+    padding: 5vw;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #fff;
+    font-size: 5vw;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+main .content {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.main h1 {
+    color: #ff1493;
+    font-size: 4vw;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.main p {
+    color: #555;
+    font-size: 2.5vw;
+    line-height: 1.5;
+}
+
+.valentine-button {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    color: white;
+    padding: 2vw 4vw;
+    border: 2px solid #fff;
+    border-radius: 1vw;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s ease-in-out;
+
+    &:hover {
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        border-color: #ff69b4;
+        transform: scale(1.05);
+    }
+}
+
+footer {
+    background: linear-gradient(45deg, #ff80b3, #ff1493);
+    padding: 2vh;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    color: #fff;
+    font-size: 1.5vw;
+    font-style: italic;
+}
+
