@@ -12,9 +12,12 @@
     <main class="main">
         <div class="content">
             <h1>Will You Be My Valentine?</h1>
-            <p>Roses are red, violets are blue, sugar is sweet, and so are you!</p>
-            <button class="valentine-button">Yes, I will be your Valentine</button>
-        </div>
+	    <p>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</p>
+   <button class="valentine-button">Yes, I will be your Valentine</button>
+<button class="valentine-button"> I REFUSE to be your Valentine..</button>
+	</div>
+
+
     </main>
 
     <?php include 'footer.php'; ?>
