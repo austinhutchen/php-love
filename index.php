@@ -7,14 +7,15 @@
     <title>Will You Be My Valentine?</title>
 </head>
 <body>
-    <?php include 'header.php'; ?>
+
+ <?php include 'header.php'; ?>
 
     <main class="main">
         <div class="content">
             <h1>Will You Be My Valentine?</h1>
 	    <p>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</p>
-   <button class="valentine-button">Yes, I will be your Valentine</button>
-<button class="valentine-button"> I REFUSE to be your Valentine..</button>
+   <button class="valentine-button">Yes, I will be your Valentine!!!!! ❤️❤️</button>
+<button class="valentine-button"> I won't be your Valentine.. >:_) </button>
 	</div>
 
 
