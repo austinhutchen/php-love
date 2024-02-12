@@ -1,6 +1,16 @@
 /* styles.css */
-h1 p {
- font-color: pink;
+h3 {
+ color: pink;
+border-image: url('images/sparkle.jpg') 140 round;
+background-image: radial-gradient(circle, #ff80b3, #ff1493);
+border: 7px  solid;
+}
+h2{
+	bold:"true";
+    color: pink;
+    border-image: url('images/sparkle.jpg') 140 round;
+    background-image: radial-gradient(circle, #ff80b3, #ff1493);
+    border: 7px  solid;
 }
 body {
     font-size: 1.6vw;
@@ -8,8 +18,9 @@ body {
     overscroll-behavior-block: contain;
 }
 img{
-max-height: 35svh;
-max-width:35svh;
+max-height: 23svh;
+max-width:23svh;
+border: 30px transparent solid;
     border-image: url('images/heart.webp') 70 round;
 }
 header {
@@ -17,16 +28,16 @@ header {
     text-align: center;
     box-shadow: 4 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-header h1 {
+header h1{
     color: #fff;
-    font-size: 5vw;
+    font-size: 4vw;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
-
 main .content {
     max-width: 60vw;
     margin: 0 auto;
+    text-align:center;
+    img-align: center;
 }
 
 .main h1 {

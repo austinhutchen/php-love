@@ -11,12 +11,16 @@
  <?php include 'header.php'; ?>
 
     <main class="main">
-        <div class="content">
+      
 	    <h1>Will You Be My Valentine?</h1>
-<img src="images/liv.JPG" alt="Liv" />
+<img src="images/gamew.JPG" alt="gameW" />
 <img src="images/couple.JPG" alt="Couple" />
-<img src="images/kiss.JPG" alt="Kiss" />
-	    <p>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</p>
+<img src="images/hot.webp" alt="Hot" />
+<img src="images/liv2.JPG" alt="l2" />
+<img src="images/wine.JPG" alt="Wine" />
+<img src="images/hot2.webp" alt="Hot2" />
+  <div class="content">
+	    <h3>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</h3>
    <button class="valentine-button">Yes, I will be your Valentine!!!!! ❤️❤️</button>
 <button class="valentine-button"> I won't be your Valentine.. >:_) </button>
 	</div>
