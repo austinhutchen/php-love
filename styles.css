@@ -1,17 +1,21 @@
 /* styles.css */
-
+h1 p {
+ font-color: pink;
+}
 body {
     font-size: 1.6vw;
-    line-height: 1.6;
+    background-color: purple;
+    overscroll-behavior-block: contain;
 }
-.boxed-img:{
-
+img{
+max-height: 35svh;
+max-width:35svh;
+    border-image: url('images/heart.webp') 70 round;
 }
 header {
     background: linear-gradient(45deg, #ff80b3, #ff1493);
-    padding: 5vw;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 4 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -34,7 +38,6 @@ main .content {
 .main p {
     color: #555;
     font-size: 2.5vw;
-    line-height: 1.5;
 }
 
 .valentine-button {
@@ -54,7 +57,6 @@ main .content {
 
 footer {
     background: linear-gradient(45deg, #ff80b3, #ff1493);
-    padding: 2vh;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
