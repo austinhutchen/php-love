@@ -4,7 +4,9 @@ body {
     font-size: 1.6vw;
     line-height: 1.6;
 }
+.boxed-img:{
 
+}
 header {
     background: linear-gradient(45deg, #ff80b3, #ff1493);
     padding: 5vw;
