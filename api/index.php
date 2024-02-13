@@ -19,9 +19,9 @@
         <div class="content">
             <h3>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</h3>
             <button class="valentine-button">Yes, I will be your Valentine!!!!! ❤️❤️</button>
-            <button c-button"> I won't be your Valentine.. >:_) </button>
+            <button class ="valentine-button"> I won't be your Valentine.. >:_) </button>
         </div>
     </main>
     <?php include 'footer.php'; ?>
 </body>
-</html>lass="valentine
+</html>
