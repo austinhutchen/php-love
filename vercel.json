@@ -11,7 +11,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/api/index.php"
+      "destination": "/api/public/$1"
     }
   ]
 }
