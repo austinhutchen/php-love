@@ -21,7 +21,6 @@ if ($path === '/favicon.ico') {
     readfile(__DIR__ . '/public/favicon.ico');
     exit;
 }
-    echo "Requested URI: $path\n"; // Debugging output
 
     // Check if the request is for the root URI
 if ($path === '/') {

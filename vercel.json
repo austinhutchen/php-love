@@ -4,14 +4,16 @@
       "runtime": "vercel-php@0.6.0"
     }
   },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.php"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/api/public/$1"
-    }
-  ]
+  "public": {
+    "includeFiles": [
+      "**/*.php",
+      "**/*.css",
+      "**/*.jpg",
+      "**/*.jpeg",
+      "**/*.png",
+      "**/*.gif",
+      "**/*.svg",
+      "**/*.webp"
+    ]
+  }
 }
