@@ -2,14 +2,19 @@
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.6.0"
+    },
+    "server": {
+      "handler": "api/index.php"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "source": "/api/(.*)",
+      "destination": "/api/index.php"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/server"
     }
-  
-  ],
-  "public": true
+  ]
 }
