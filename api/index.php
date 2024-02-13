@@ -24,15 +24,22 @@ if ($path === '/favicon.ico') {
     echo "Requested URI: $path\n"; // Debugging output
 
     // Check if the request is for the root URI
-    if ($path === '/') {
-        // Redirect to index.html or handle accordingly
-        // For example:
-        // header("Location: /index.html");
-        // exit;
-        // Or serve a default HTML content
-        // echo "Welcome to the website!";
-        // exit;
+if ($path === '/') {
+    // Serve the index.php file
+    $filePath = __DIR__ . '/index.php';
+
+    // Check if the file exists and is readable
+    if (file_exists($filePath) && is_readable($filePath)) {
+        // Output the file contents
+        require_once($filePath);
+        exit;
+    } else {
+        // Handle non-existent or unreadable files
+        http_response_code(404);
+        echo json_encode(['error' => 'File not found']);
+        exit;
     }
+}
 
     // Define the base directory for static assets
     $baseDir = __DIR__ . '/public';
