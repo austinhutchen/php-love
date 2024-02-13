@@ -2,9 +2,6 @@
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.6.0"
-    },
-    "server": {
-      "handler": "api/index.php"
     }
   },
   "rewrites": [
@@ -14,7 +11,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/server"
+      "destination": "/api/index.php"
     }
   ]
 }
