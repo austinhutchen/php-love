@@ -4,18 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    // Function to check if the requested URI is for a CSS file
-    function isCssRequest($uri) {
-        // Check if the URI ends with ".css"
-        return pathinfo($uri, PATHINFO_EXTENSION) === 'css';
-    }
-
-    // Function to construct the file path for CSS files
-    function getCssFilePath($uri) {
-        // Construct the file path for CSS files
-        return __DIR__ . '/public' . $uri;
-    }
-
     // Handle API requests
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['api'])) {
         // Handle API logic
@@ -24,7 +12,15 @@
     }
 
     // Serve static assets
-    $path = $_SERVER['REQUEST_URI'];
+    $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+// Check if the request is for favicon.ico
+if ($path === '/favicon.ico') {
+    // Set the appropriate Content-Type header for favicon
+    header("Content-Type: image/x-icon");
+    // Serve a default favicon file
+    readfile(__DIR__ . '/public/favicon.ico');
+    exit;
+}
     echo "Requested URI: $path\n"; // Debugging output
 
     // Check if the request is for the root URI
@@ -38,50 +34,52 @@
         // exit;
     }
 
-    // Check if the request is for a CSS file
-    if (isCssRequest($path)) {
-        // Set the appropriate Content-Type header for CSS
-        header("Content-Type: text/css");
-        // Get the file path for CSS files
-        $filePath = getCssFilePath($path);
-        echo "File Path: $filePath\n"; // Debugging output
-    } else {
-        // Construct the file path for other static assets
-        $filePath = __DIR__ . '/public' . $path;
-        echo "File Path: $filePath\n"; // Debugging output
-    }
+    // Define the base directory for static assets
+    $baseDir = __DIR__ . '/public';
+
+    // Check if the requested file exists in the public directory
+    $filePath = $baseDir . $path;
 
     // Check if the file exists and is readable
     if (file_exists($filePath) && is_file($filePath) && is_readable($filePath)) {
+        // Get the MIME type of the file
+        $mime_type = mime_content_type($filePath);
+        // Set the appropriate Content-Type header
+        header("Content-Type: $mime_type");
         // Output the file contents
         readfile($filePath);
         exit;
     } else {
-        // Handle non-existent or unreadable files
-        http_response_code(404);
-        echo json_encode(['error' => 'File not found']);
-        exit;
+        // Check if the requested file exists in any subdirectory of public
+        $directories = glob($baseDir . '/*', GLOB_ONLYDIR);
+        foreach ($directories as $directory) {
+            $filePath = $directory . $path;
+            if (file_exists($filePath) && is_file($filePath) && is_readable($filePath)) {
+                // Get the MIME type of the file
+                $mime_type = mime_content_type($filePath);
+                // Set the appropriate Content-Type header
+                header("Content-Type: $mime_type");
+                // Output the file contents
+                readfile($filePath);
+                exit;
+            }
+        }
     }
+
+    // Handle non-existent or unreadable files
+    http_response_code(404);
+    echo json_encode(['error' => 'File not found']);
+    exit;
     ?>
     <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="/api/public/styles.css">
+    <link rel="stylesheet" href="/public/styles.css">
 </head>
 <body>
     <?php include 'header.php'; ?>
     <main class="main">
         <h1>Will You Be My Valentine?</h1>
-        <img src="/api/public/images/gamew.JPG" alt="gameW" />
-        <img src="/api/public/images/couple.JPG" alt="Couple" />
-        <img src="/api/public/images/hot.webp" alt="Hot" />
-        <img src="/api/public/images/liv2.JPG" alt="l2" />
-        <img src="/api/public/images/wine.JPG" alt="Wine" />
-        <img src="/api/public/images/hot2.webp" alt="Hot2" />
-        <div class="content">
-            <h3>Roses are red, violets are blue, brown sugar and banana bread is the sweetest, and so are you!</h3>
-            <button class="valentine-button">Yes, I will be your Valentine!!!!! ❤️❤️</button>
-            <button class="valentine-button"> I won't be your Valentine.. >:_) </button>
-        </div>
-    </main>
-    <?php include 'footer.php'; ?>
-</body>
-</html>
+        <img src="/public/images/gamew.JPG" alt="gameW" />
+        <img src="/public/images/couple.JPG" alt="Couple" />
+        <img src="/public/images/hot.webp" alt="Hot" />
+        <img src="/public/images/liv2.JPG" alt="l2" />
+       ⬤
