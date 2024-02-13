@@ -63,7 +63,7 @@ if (file_exists($filePath) && is_file($filePath) && is_readable($filePath)) {
 ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>Will You Be My Valentine?</title>
 </head>
 <body>
