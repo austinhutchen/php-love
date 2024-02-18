@@ -6,7 +6,6 @@
   },
   "public": {
     "includeFiles": [
-      "**/*.php",
       "**/*.css",
       "**/*.jpg",
       "**/*.jpeg",
